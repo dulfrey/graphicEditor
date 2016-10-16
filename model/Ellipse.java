@@ -8,6 +8,11 @@ import java.awt.Graphics2D;
  * @author Dulfrey
  */
 public class Ellipse extends FigureWithFilling {
+
+    @Override
+    protected boolean doEditProperties() {
+        throw new UnsupportedOperationException( "Not supported yet." ); //To change body of generated methods, choose Tools | Templates.
+    }
 private static class Factory extends FigureFactory {
 
 		@Override

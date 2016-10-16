@@ -13,23 +13,32 @@ import java.util.List;
  *
  * @author Dulfrey
  */
-public class Group extends Figure{
-    private List<Figure> children;
-    
-    public Group(final List<Figure> children){
-        this.children = children;
-    }
-    public Iterator<Figure> getFigures(){
-        return children.iterator();
-    }
-    
-    @Override
-    protected void doPaint(Graphics2D g) {
-        for (Figure f : children) {
-            f.paint(g);
-            
-        }
-    }
-    
-    
+
+public class Group extends Figure {
+
+	public Group( final List<Figure> children ) {
+		
+		this.children = children;
+	}
+
+	@Override
+	protected void doPaint( final Graphics2D g ) {
+		for ( Figure f : children ) {
+			f.paint( g );
+		}
+	}
+
+	@Override
+	protected boolean  doEditProperties() {
+		// TODO
+                return true;
+	}
+
+	public Iterator<Figure> getChildren() {
+		return children.iterator();
+	}
+
+	
+	
+	private List<Figure> children;
 }

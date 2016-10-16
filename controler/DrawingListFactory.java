@@ -9,23 +9,25 @@ import model.Figure;
 public class DrawingListFactory {
 
 	@SuppressWarnings("unchecked")
-	public static List<Figure> getContainer() {
+	public static <T> T getFigureList() {
 		
-		List<Figure> list =  new ArrayList<Figure>();
+		T list = null;
 		
+		// is there a system property?
 		String className = System.getProperty(KEY);
-		
-		try {
-			Class<? extends List<Figure>> clazz = 
-				(Class<? extends List<Figure>>)Class.forName(className);
-			
-			list = clazz.newInstance();
-			
-		} catch (Exception e) {
-			e.printStackTrace();
+		if ( className != null ) {
+			try {
+				Class<? extends List<Figure>> clazz = 
+					(Class<? extends List<Figure>>)Class.forName(className);
+				
+				list = (T)clazz.newInstance();
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		
-		return list;
+		return (list == null ? (T)new LinkedList<Figure>() : list);
 	}
 	public static final String KEY = "container";
 }

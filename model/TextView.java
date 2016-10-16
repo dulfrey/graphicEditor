@@ -23,4 +23,9 @@ public TextFigure text = new TextFigure();
         text.setText("text");
         //this.text.getText());
     }
+
+    @Override
+    protected boolean doEditProperties() {
+        throw new UnsupportedOperationException( "Not supported yet." ); //To change body of generated methods, choose Tools | Templates.
+    }
 }

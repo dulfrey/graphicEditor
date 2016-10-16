@@ -5,8 +5,10 @@ import view.BoundBox;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.List;
+import java.awt.Point;
 import java.util.Iterator;
 import java.util.LinkedList;
+import javax.swing.JTextArea;
 import model.*;
 import view.*;
 
@@ -18,7 +20,7 @@ public class App {
         
         
 	private App() {
-		model = new Drawing( DrawingListFactory.getContainer() );
+		model = new Drawing( DrawingListFactory.getFigureList());
 		view = new MainFrame("Design Patterns v0.1");
 	} 
         public Iterator<Figure> getFigures() {
@@ -46,6 +48,18 @@ public class App {
     public void undo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public void select(final Point ptReleased ) {
+        model.select(ptReleased);
+    }
+
+    public void select( Point ptPressed, Point ptReleased ) {
+//       BoundBox  bbox = new BoundBox(x, y, w, h);
+       
+//        for ( Figure f : fig ) {
+//            
+//        }
+    }
 	
 	//Singleton con Lazy inicialization 
 	private static class LazyHolder {
@@ -65,12 +79,23 @@ public class App {
 		view.setBounds( 50, 50, 800, 600 );
 		view.setVisible( true );
 	}
+        public void addDrawingListener( final DrawingListener dl ) {
+		if ( dl != null ) {
+			model.addListener( dl );
+		}
+	}
 
 	public static void main(String[] args) {
 		App app = App.getInstance();
 		app.run();
 	}
         
+        public void editProperties( final Point pt ) {
+		model.editProperties( pt );
+	}
+        public void setTextArea( final JTextArea editor ) {
+		view.setTextArea( editor );
+	}
         
 //        private java.util.List<model.Figure> testFigures() {
 //		
