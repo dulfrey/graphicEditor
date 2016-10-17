@@ -36,6 +36,17 @@ public class MainFrame extends JFrame implements ModelListener {
         menu.add( item );
         mbar.add( menu );
 
+        JMenu menuEdit = new JMenu( "Editar" );
+        JMenuItem undo = new JMenuItem( "Deshacer" );
+        item.addActionListener( new ActionListener() {
+            @Override
+            public void actionPerformed( ActionEvent e ) {
+                App.getInstance().undo();
+
+            }
+        } );
+        menuEdit.add( undo );
+        mbar.add( menuEdit );
         super.setSize( 400, 500 );
     }
 

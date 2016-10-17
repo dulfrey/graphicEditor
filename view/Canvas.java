@@ -16,7 +16,8 @@ import model.Figure;
 public class Canvas extends JPanel  implements DrawingListener{
         
     
-        
+        Tool [] tools;
+        Tool active;
 	@Override
 	public void paint( final Graphics g ) {
 		super.paint( g );
