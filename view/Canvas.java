@@ -51,11 +51,18 @@ public class Canvas extends JPanel  implements DrawingListener{
 				if ( me.getClickCount() == 2 ) {
 					App.getInstance().editProperties( me.getPoint() );
 				}
+                                
 			}
 		} );
+               
+                
+                active = new EllipseCreationTool();
+                
+                addMouseListener( active);
 		
 		// Observer
 		App.getInstance().addDrawingListener( this );
+                
 	}
 	//App.getInstance().add( f );	
 

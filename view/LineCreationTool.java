@@ -5,6 +5,7 @@
  */
 package view;
 
+import controler.App;
 import java.awt.Color;
 import model.FigureFactory;
 import model.Line;
@@ -19,12 +20,11 @@ public class LineCreationTool extends Tool {
     protected void processMouseReleased() {
         //crear la figura 
         Line l = (Line) FigureFactory.getFigure(Line.class.getName());
-        l.setBoundBox(new BoundBox(ptPressed.x, ptPressed.y, ptReleased.x,ptReleased.y));
-        l.setColor(Color.yellow);
+        l.setBoundBox(new BoundBox(ptPressed.x, ptPressed.y, ptReleased.x - ptPressed.x ,ptReleased.y - ptPressed.y));
+        l.setColor(Color.BLACK);
         // agregar al dibujo
-        
-        
-        
+       App.getInstance().add(l);
+               
     }
     
 }

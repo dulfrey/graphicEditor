@@ -59,7 +59,7 @@ public class MainFrame extends JFrame implements ModelListener {
 	}
 
     public void repaintCanvas() {
-        // TODO Auto-generated method stub
+        canvas.repaint();
 
     }
 

@@ -29,7 +29,7 @@ public class App {
 	}
 
 	public void add( final Figure f ) {
-	
+            
 		if ( f != null ) {
 			model.add( f );
 			view.repaintCanvas();

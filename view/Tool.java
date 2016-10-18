@@ -18,11 +18,14 @@ public abstract class  Tool extends MouseAdapter{
     protected Point ptReleased;
     protected abstract void processMouseReleased();
     
+    @Override
     public void mousePressed(MouseEvent e){
         ptPressed = e.getPoint();
     }
+    @Override
     public void mouseReleased(MouseEvent e){
-        ptPressed = e.getPoint();
+        ptReleased = e.getPoint();
         processMouseReleased();
+        
     }
 }

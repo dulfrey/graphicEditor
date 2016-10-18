@@ -11,7 +11,7 @@ public class Line extends Figure {
 	public void doPaint( Graphics2D g ) {
 		
 		BoundBox bbox = getBoundBox();
-		g.drawLine( bbox.x, bbox.y, bbox.x + bbox.width, bbox.y + bbox.height );
+		g.drawLine(bbox.x, bbox.y, bbox.x + bbox.width, bbox.y + bbox.height );
 	}
 
     @Override

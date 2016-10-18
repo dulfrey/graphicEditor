@@ -29,8 +29,7 @@ public class Drawing {
     }
 
     private void testFigures() {
-        Ellipse ef = (Ellipse) FigureFactory.getFigure(
-                Ellipse.class.getName());
+        Ellipse ef = (Ellipse) FigureFactory.getFigure(Ellipse.class.getName());
         ef.setBoundBox(new BoundBox(100, 100, 400, 300));
         ef.setColor(Color.BLACK);
         ef.setFillColor(Color.YELLOW);
@@ -43,7 +42,7 @@ public class Drawing {
         add(l);
         TextFigure tf = (TextFigure) FigureFactory.getFigure(
                 TextFigure.class.getName());
-        tf.setBoundBox(new BoundBox(100, 100, 400, 300));
+        tf.setBoundBox(new BoundBox(50, 50, 400, 300));
         tf.setColor(Color.RED);
         tf.setFont(new Font("Arial", Font.BOLD, 32));
         tf.setText("ABCabc123");
