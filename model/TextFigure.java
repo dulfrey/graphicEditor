@@ -77,7 +77,8 @@ public class TextFigure extends Figure implements DocumentListener {
 
         }
     }
-
+    
+    //6. Adapter
     private void starEdit() {
         editor = createTextArea();
         App.getInstance().setTextArea( editor );

@@ -48,9 +48,10 @@ public class Drawing {
         tf.setText("ABCabc123");
         add(tf);
     }
-
+    
+    
+    //16.iterator
     public Iterator<Figure> getFigures() {
-
         return figures.iterator();
     }
 

@@ -12,12 +12,16 @@ import java.util.Map;
  *
  * @author Dulfrey
  */
+
+//3. abstract factory: devuelve todo de la misma familia 
 public  abstract  class FigureFactory {
     
     private static Map<String,FigureFactory> map = new HashMap<>();
     public abstract Figure create();
     
-	public static Figure getFigure( String clazz ) {
+    
+        //2. factoy method 
+	public static Figure getFigure( final String clazz ) {
 		
 		Figure figure = null;
 	

@@ -44,7 +44,7 @@ public class Canvas extends JPanel  implements DrawingListener{
 		setBackground( Color.WHITE );
 		setLayout( null );
 		
-		// Observer
+		// Observer  6. Adapter
 		addMouseListener( new MouseAdapter() {
 			@Override
 		    public void mouseClicked( final MouseEvent me ) {
@@ -56,7 +56,7 @@ public class Canvas extends JPanel  implements DrawingListener{
 		} );
                
                 
-                active = new EllipseCreationTool();
+                active = new LineCreationTool();
                 
                 addMouseListener( active);
 		

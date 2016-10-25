@@ -24,6 +24,7 @@ public class TextCreationTool extends Tool {
         l.setColor(Color.BLACK);
         // agregar al dibujo
        App.getInstance().add(l);
+       
                
     }
 }

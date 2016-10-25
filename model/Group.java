@@ -33,7 +33,7 @@ public class Group extends Figure {
 		// TODO
                 return true;
 	}
-
+        //16. Iterator 
 	public Iterator<Figure> getChildren() {
 		return children.iterator();
 	}
