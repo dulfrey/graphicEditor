@@ -35,7 +35,7 @@ public class MainFrame extends JFrame implements ModelListener {
 
         menu.add(item);
         mbar.add(menu);
-
+        
         JMenu menuEdit = new JMenu("Editar");
         JMenuItem undo = new JMenuItem("Deshacer");
         item.addActionListener(new ActionListener() {
@@ -67,6 +67,9 @@ public class MainFrame extends JFrame implements ModelListener {
     public void init() {
         canvas = new Canvas();
         canvas.init();
+        
+        //decorator
+        JScrollPane scrollPane = new JScrollPane(canvas);
         //observer
         App.getInstance().addListener(this);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);

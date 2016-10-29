@@ -13,7 +13,7 @@ import javax.swing.JTextArea;
 import model.DrawingListener;
 import model.Figure;
 
-public class Canvas extends JPanel  implements DrawingListener{
+public class Canvas extends JPanel  implements DrawingListener {
         
     
         Tool [] tools;

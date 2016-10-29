@@ -8,6 +8,7 @@ package model;
 import java.awt.Graphics2D;
 import java.util.Iterator;
 import java.util.List;
+import view.BoundBox;
 
 /**
  *
@@ -19,6 +20,7 @@ public class Group extends Figure {
 	public Group( final List<Figure> children ) {
 		
 		this.children = children;
+               
 	}
 
 	@Override
