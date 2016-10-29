@@ -77,9 +77,14 @@ public class Drawing {
     public void select( Point ptReleased ) {
         throw new UnsupportedOperationException( "Not supported yet." ); //To change body of generated methods, choose Tools | Templates.
     }
+    
      public Memento saveTomento(){
         return new Memento(figures);
         }
+     
+     public void restoreFromMemento(Memento m){
+         this.figures = m.getSavedState();
+     }
     
     //implementación de memento 
     public  class Memento {
@@ -88,6 +93,10 @@ public class Drawing {
         
         private Memento( List<Figure> figures ) {
             state = figures;
+        }
+
+        private List<Figure> getSavedState() {
+            return this.state;
         }
        
     }
