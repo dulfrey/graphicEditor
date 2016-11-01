@@ -5,7 +5,7 @@
  */
 
 
-package view;
+package view.commands;
 import controler.*;
 
 /**

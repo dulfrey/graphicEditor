@@ -1,5 +1,6 @@
 package controler;
 
+import view.commands.Tool;
 import view.MainFrame;
 import view.BoundBox;
 import java.awt.Color;
@@ -59,6 +60,14 @@ public class App {
 //        for ( Figure f : fig ) {
 //            
 //        }
+    }
+
+    public void setActiveTool( int tool ) {
+        view.setActiveTool(tool);
+    }
+
+    public Drawing.Memento saveToMemento() {
+        throw new UnsupportedOperationException( "Not supported yet." ); //To change body of generated methods, choose Tools | Templates.
     }
 	
 	//Singleton con Lazy inicialization 

@@ -78,7 +78,7 @@ public class Drawing {
         throw new UnsupportedOperationException( "Not supported yet." ); //To change body of generated methods, choose Tools | Templates.
     }
     
-     public Memento saveTomento(){
+     public Memento saveToMemento(){
         return new Memento(figures);
         }
      

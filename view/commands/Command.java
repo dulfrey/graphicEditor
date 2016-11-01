@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package view.commands;
 
+import controler.App;
 import model.Drawing.Memento;
 
 /**
@@ -16,5 +17,14 @@ import model.Drawing.Memento;
 public abstract class Command implements Cloneable{
         private  Memento me;
         public abstract void execute();   
+
+    private  void saveToMemento() {
+        this.me = App.getInstance().saveToMemento();
+    }
+    
+    public Memento getMemento(){
+        return me;
+    }
+        
         
 }
