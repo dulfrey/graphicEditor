@@ -16,16 +16,16 @@ import view.BoundBox;
  * @author Dulfrey
  */
 public class EllipseCreationTool extends Tool {
-    
+
     @Override
     protected void processMouseReleased() {
         //crear la figura 
-        Ellipse l = (Ellipse) FigureFactory.getFigure(Ellipse.class.getName());
-        l.setBoundBox(new BoundBox(ptPressed.x, ptPressed.y, ptReleased.x - ptPressed.x ,ptReleased.y - ptPressed.y));
-        l.setColor(Color.BLACK);
+        Ellipse l = (Ellipse) FigureFactory.getFigure( Ellipse.class.getName() );
+        l.setBoundBox( new BoundBox( ptPressed.x, ptPressed.y, ptReleased.x - ptPressed.x, ptReleased.y - ptPressed.y ) );
+        l.setColor( Color.BLACK );
         // agregar al dibujo
-       Command create = new CreateFigure(l);
-      create.execute();
-               
+        Command create = new CreateFigure( l );
+        create.execute();
+
     }
 }

@@ -19,6 +19,16 @@ public class Drawing {
         listeners = new LinkedList<>();
     }
 
+    public double computeArea(){
+        double area = 0 ;
+        AreaVisitor v = new AreaVisitor();
+        
+        for (Figure f : figures) {
+            f.accept( v );
+        }
+        return v.getArea(); 
+    }
+    
     public void init() {
         testFigures();
     }
@@ -99,5 +109,5 @@ public class Drawing {
             return this.state;
         }
        
-    }
+    }//crear delete memento deben guardar los objetos borrados
 }

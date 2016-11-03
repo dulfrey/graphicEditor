@@ -16,16 +16,21 @@ import view.BoundBox;
  *
  * @author Dulfrey
  */
+public abstract class CreationTool extends Tool {
 
-public class LineCreationTool extends CreationTool {
+    //método abstracto para el template method
+    public abstract Figure createFigure();
 
     @Override
-    public Figure createFigure( ) {
-         Line l = (Line) FigureFactory.getFigure(Line.class.getName());
-         l.setBoundBox(new BoundBox(ptPressed.x, ptPressed.y, ptReleased.x - ptPressed.x ,ptReleased.y - ptPressed.y));
-         return l;
+    protected void processMouseReleased() {
+        //crear la figura 
+        Figure f = createFigure();
+        f.setColor( Color.BLACK );
+        // agregar al dibujo
+        
+        App.getInstance().add(f);
+        
+
     }
 
-   
-    
 }

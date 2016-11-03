@@ -96,6 +96,10 @@ public abstract class Figure implements Shape {
         selected = b;
     }
 
+    void accept(final Visitor v) {
+        v.visit(this);
+    }
+
     public static class NullIterator
             implements Iterator<Figure> {
 

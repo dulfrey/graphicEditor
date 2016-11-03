@@ -14,16 +14,16 @@ import view.Canvas;
  *
  * @author Dulfrey
  */
-public class setActiveTool extends Command {
-    private Canvas c;
+public class SetActiveTool extends Command {
+   
     private  int tool;
 
     @Override
     public void execute() {
         App.getInstance().setActiveTool(tool);
     }
-    public setActiveTool(int tool){
-        this.c.setActiveTool( tool );
+    public SetActiveTool(int thetool){
+        this.tool = thetool;
     }
     
 }

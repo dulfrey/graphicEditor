@@ -12,15 +12,17 @@ import model.Figure;
  *
  * @author Dulfrey
  */
-public class CreateFigure extends Command{
+public class CreateFigure extends UndoableCommand{
     private  Figure f;
     @Override
     public void execute() {
-         App.getInstance().add(f);
+        
+         App.getInstance().addcommandToUndoManager(this);
+          
     }
     public CreateFigure(Figure f){
         this.f = f;
-       saveToMemento();
+        saveToMemento();
     }
     
 }

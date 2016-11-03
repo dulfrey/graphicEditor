@@ -6,19 +6,16 @@
 package view.commands;
 
 import controler.App;
-import model.Drawing.Memento;
 
 /**
  *
  * @author Dulfrey
  */
-
-// se extiende clonable para implementar el patrón prototype
-public abstract class Command implements Cloneable{
-        
-        public abstract void execute();   
-
-   
-        
-        
+public class RedoCommand extends Command{
+    
+    
+     @Override
+    public void execute() {
+        App.getInstance().undo();
+    }
 }

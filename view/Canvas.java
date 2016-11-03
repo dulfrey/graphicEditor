@@ -21,13 +21,13 @@ import view.commands.TextCreationTool;
 
 public class Canvas extends JPanel implements DrawingListener {
 
-    private static int LINETOOL = 0;
-    private static int RECTTOOL = 1;
-    private static int ELLIPSETOOL = 2;
-    private static int TEXTTOOL = 3;
-    private static int SELECTIONTOOL = 0;
+    public  static int LINETOOL = 0;
+    public  static int RECTTOOL = 1;
+    public  static int ELLIPSETOOL = 2;
+    public  static int TEXTTOOL = 3;
+    public  static int SELECTIONTOOL = 4;
 
-    private Tool[] tools;
+    private Tool[] tools =new Tool[5];;
 
     private Tool activeTool;
    
@@ -56,7 +56,7 @@ public class Canvas extends JPanel implements DrawingListener {
     public void init() {
         setBackground( Color.WHITE );
         setLayout( null );
-
+        
         tools[LINETOOL] = new LineCreationTool();
         tools[SELECTIONTOOL] = new SelectionTool();
         tools[RECTTOOL] = new RectangleCreationTool();
@@ -74,7 +74,7 @@ public class Canvas extends JPanel implements DrawingListener {
             }
         } );
 
-        activeTool = new LineCreationTool();
+        activeTool = new RectangleCreationTool();
         
         addMouseListener( activeTool );
         
@@ -90,7 +90,9 @@ public class Canvas extends JPanel implements DrawingListener {
     }
 
     public void setActiveTool( int tool ) {
+        removeMouseListener(activeTool);
         this.activeTool = tools[tool];
+        addMouseListener( activeTool );
     }
 
 }
